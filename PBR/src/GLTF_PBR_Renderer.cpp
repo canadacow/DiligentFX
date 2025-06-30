@@ -641,7 +641,7 @@ void GLTF_PBR_Renderer::Render(IDeviceContext*              pCtx,
 
             {
                 void* pAttribsData = nullptr;
-                pCtx->MapBuffer(m_PBRPrimitiveAttribsCB, MAP_WRITE, MAP_FLAG_DISCARD, pAttribsData);
+                pCtx->MapBuffer(m_PBRPrimitiveAttribsCB, MAP_WRITE, MAP_FLAG_DISCARD, 0, m_PBRPrimitiveAttribsCB->GetDesc().Size, pAttribsData);
                 if (pAttribsData != nullptr)
                 {
                     static_assert(static_cast<PBR_WORKFLOW>(GLTF::Material::PBR_WORKFLOW_METALL_ROUGH) == PBR_WORKFLOW_METALL_ROUGH, "GLTF::Material::PBR_WORKFLOW_METALL_ROUGH != PBR_WORKFLOW_METALL_ROUGH");

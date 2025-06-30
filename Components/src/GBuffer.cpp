@@ -47,7 +47,7 @@ static std::vector<GBuffer::ElementDesc> GetGBufferElementDescs(const GBuffer::E
             const auto& FmtAttribs = GetTextureFormatAttribs(ElemDesc.Format);
             if (FmtAttribs.ComponentType == COMPONENT_TYPE_DEPTH || FmtAttribs.ComponentType == COMPONENT_TYPE_DEPTH_STENCIL)
             {
-                ElemDesc.BindFlags = BIND_DEPTH_STENCIL | BIND_SHADER_RESOURCE;
+                ElemDesc.BindFlags = BIND_DEPTH_STENCIL | BIND_SHADER_RESOURCE | BIND_UNORDERED_ACCESS;
             }
             else
             {
